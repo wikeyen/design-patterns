@@ -1,5 +1,5 @@
 package com.mike.dp.strategy;
 
-public interface PrintBehaviour {
+public interface IPrintBehaviour {
     String print();
 }

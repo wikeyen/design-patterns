@@ -9,7 +9,7 @@ class StrategyPrinterTest {
 
     @Test
     void should_print_hello_world_when_print_given_hello_world_printer() {
-        PrintBehaviour helloWorldBehaviour = new HelloWorldPrintBehaviour();
+        IPrintBehaviour helloWorldBehaviour = new HelloWorldIPrintBehaviour();
         printer = new StrategyPrinter(helloWorldBehaviour);
 
         String res = printer.print();
@@ -20,8 +20,8 @@ class StrategyPrinterTest {
     @Test
     void should_print_hello_mike_when_print_given_hello_mike_printer() {
         printer = new StrategyPrinter();
-        PrintBehaviour helloMikeBehaviour = new HelloMikePrintBehaviour();
-        printer.setPrintBehaviour(helloMikeBehaviour);
+        IPrintBehaviour helloMikeBehaviour = new HelloMikeIPrintBehaviour();
+        printer.setIPrintBehaviour(helloMikeBehaviour);
 
         String res = printer.print();
 
@@ -30,13 +30,13 @@ class StrategyPrinterTest {
 
     @Test
     void should_first_print_hello_world_then_hello_mike_when_print_given_change_helloWorldBehaviour_to_helloMikeBehaviour_dynamically() {
-        HelloWorldPrintBehaviour helloWorldPrintBehaviour = new HelloWorldPrintBehaviour();
+        HelloWorldIPrintBehaviour helloWorldPrintBehaviour = new HelloWorldIPrintBehaviour();
         printer = new StrategyPrinter(helloWorldPrintBehaviour);
 
         String firstRes = printer.print();
 
-        HelloMikePrintBehaviour helloMikePrintBehaviour = new HelloMikePrintBehaviour();
-        printer.setPrintBehaviour(helloMikePrintBehaviour);
+        HelloMikeIPrintBehaviour helloMikePrintBehaviour = new HelloMikeIPrintBehaviour();
+        printer.setIPrintBehaviour(helloMikePrintBehaviour);
 
         String secondRes = printer.print();
 

@@ -1,6 +1,6 @@
 package com.mike.dp.strategy;
 
-public class HelloWorldPrintBehaviour implements PrintBehaviour {
+public class HelloWorldIPrintBehaviour implements IPrintBehaviour {
     public String print() {
         return "Hello World!";
     }

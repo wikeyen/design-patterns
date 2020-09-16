@@ -12,9 +12,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class StrategyPrinter {
     @Setter
-    private PrintBehaviour printBehaviour;
+    private IPrintBehaviour IPrintBehaviour;
 
     public String print() {
-        return this.printBehaviour.print();
+        return this.IPrintBehaviour.print();
     }
 }
